@@ -12,6 +12,9 @@ import { PedidosComponent } from './pedidos/pedidos.component';
 import { AjudaComponent } from './ajuda/ajuda.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { InfoProdutoComponent } from './info-produto/info-produto.component';
+import { InfoPedidoComponent } from './info-pedido/info-pedido.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     PedidosComponent,
     AjudaComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    InfoProdutoComponent,
+    InfoPedidoComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
