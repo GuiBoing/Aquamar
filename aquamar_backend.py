@@ -13,21 +13,37 @@ mydb = mysql.connector.connect(
 )
 
 
-@app.route('/produtos-get')
-def getLista():
+@app.route('/produtos')
+def getProdutos():
     cursor = mydb.cursor()
     cursor.execute("SELECT * FROM produtos")
-    produtos= []
+    produtos = []
     for row in cursor.fetchall():
         produto = {}
-        produto['id'] = row[1]
-        produto['nome'] = row[2]
-        produto['descricao'] = row[3]
-        produto['preco'] = row[4]
-        produto['quantidade'] = row[5]
+        produto['id'] = row[0]
+        produto['nome'] = row[1]
+        produto['descricao'] = row[2]
+        produto['preco'] = row[3]
+        produto['quantidade'] = row[4]
         produtos.append(produto)
 
     return jsonify(produtos)
+
+
+@app.route('/add-produtos', methods=['POST'])
+def adicionar_produto():
+    mycursor = mydb.cursor()
+    sql = "INSERT INTO produtos (nome, descricao, preco, quantidade) VALUES (%s, %s, %s, %s)"
+    val = (
+        request.json['nome'],
+        request.json['descricao'],
+        request.json['preco'],
+        request.json['quantidade']
+    )
+    mycursor.execute(sql, val)
+    mydb.commit()
+
+    return jsonify({'mensagem': 'Cliente adicionado com sucesso!'})
 
 
 @app.errorhandler(400)
@@ -41,4 +57,4 @@ def internal_server_error(error):
 
 
 if __name__ == '__main__':
-    app.run(host='localhost', port=8000)
+    app.run(debug=True,host='localhost', port=8000)
