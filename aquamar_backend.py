@@ -45,7 +45,7 @@ def adicionar_produto():
 
     return jsonify({'mensagem': 'Cliente adicionado com sucesso!'})
 
-
+# ‘user/<int:id>
 @app.errorhandler(400)
 def bad_request(error):
     return jsonify({'error': 'Bad Request - ' + error.description}), 400

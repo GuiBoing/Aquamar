@@ -1,12 +1,24 @@
-*{
-  
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+* {
+  font-family: 'Roboto Slab', serif;
 }
-$body-bg: #003366;
-$link-color:#006666;
-$link-shade-percentage: 50%;
+
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100hv;
+  width: 100%;
+}
+
+$body-bg: #002766;
+$link-color: #006666;
+$body-color: #ffffff;
 $theme-colors: (
-  "primary": #0074d9,
-  "danger": #ff4136
+  "primary": #006666,
+  "secondary":#19bb3c,
+  "danger": #ff5e00
 );
+$nav-tabs-link-active-color: #fff;
 
 @import "node_modules/bootstrap/scss/bootstrap";

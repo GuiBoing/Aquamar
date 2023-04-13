@@ -1,14 +1,21 @@
-<header
-  class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between border-bottom">
+<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between">
   <div class="col-md-3 mb-2 mb-md-0">
-      <img  height="75" src="../assets/catfishlogo2.png" class="icon">
+    <img height="75" src="../assets/catfishlogo2.png" class="icon">
   </div>
 
-  <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-    <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-    <li><a href="#" class="nav-link px-2">Produtos</a></li>
-    <li><a href="#" class="nav-link px-2">Ajuda</a></li>
-    <li><a href="#" class="nav-link px-2">Cliente</a></li>
+  <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 " id="navbarNav">
+    <li class="nav-item active  ">
+      <a [routerLink]="'home'" class="nav-link px-2 ">Home</a>
+    </li>
+    <li class="nav-item">
+      <a [routerLink]="'pedidos'" class="nav-link px-2">Pedidos</a>
+    </li>
+    <li class="nav-item">
+      <a [routerLink]="'produtos'" class="nav-link px-2">Produtos</a>
+    </li>
+    <li class="nav-item">
+      <a [routerLink]="'ajuda'" class="nav-link px-2">Ajuda</a>
+    </li>
   </ul>
 
   <div class="col-md-3 text-end">
@@ -16,4 +23,4 @@
     <button type="button" class="btn btn-primary">Sign-up</button>
   </div>
 </header>
-<router-outlet></router-outlet>
+<router-outlet class="main-content"></router-outlet>

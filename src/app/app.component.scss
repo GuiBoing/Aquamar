@@ -1,9 +1,30 @@
 .icon {
   padding: 5px 0px;
 }
-.flex-wrap{
+
+.flex-wrap {
   padding: 0px 10px;
 }
-header{
-  background-color:#87CEEB ;
+
+header {
+  border-radius: 0 0 20px 20px;
+  margin: 0 20px;
+  background-color: #87CEEB;
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+}
+
+.active {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+app {
+  padding: 2px;
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
